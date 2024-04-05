@@ -31,10 +31,10 @@ const Achievements = () => {
       {ACHIEVEMENTS.map((achievement, ai) => (
         <div
           key={["achievement", ai].join("-")}
-          className="flex items-center gap-3"
+          className="flex items-center gap-5"
         >
           {achievement?.icon ? (
-            <div className="flex h-12 w-12 items-center justify-center">
+            <div className="flex max-h-12 max-w-12 items-center justify-center">
               {achievement.icon}
             </div>
           ) : null}

@@ -13,8 +13,8 @@ export default function Home() {
       <LogoClouds />
       <Features />
       <Testimonial />
-      {/* <Metrics /> */}
-      {/* <LogoCloudsV2 /> */}
+      <Metrics />
+      <LogoCloudsV2 />
       <CTA />
     </main>
   );

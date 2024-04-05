@@ -51,7 +51,7 @@ const Features = () => {
                 className="flex flex-col items-center gap-6"
               >
                 {feature?.icon ? (
-                  <div className="h-8">{feature.icon}</div>
+                  <div className="max-w-8">{feature.icon}</div>
                 ) : null}
                 <div className="flex flex-col items-center gap-4">
                   {feature?.name ? (

@@ -31,7 +31,7 @@ const Card = ({
 }) => {
   return (
     <div className="flex flex-col gap-8 rounded-lg bg-white px-9 py-8 shadow-md">
-      {logo ? <div className="h-7 w-28">{logo}</div> : null}
+      {logo ? <div className="max-w-28">{logo}</div> : null}
       <div className="flex items-start justify-start gap-4">
         {StaticImage.smallQuoteMark}
         <div className="flex flex-col gap-8">

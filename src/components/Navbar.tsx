@@ -11,7 +11,7 @@ const Navbar = () => {
             href={"https://www.figma.com/community/file/894552273937682724"}
             target="_blank"
           >
-            {StaticImage.logo}
+            <div className="max-w-32">{StaticImage.logo}</div>
           </Link>
           <div className="hidden gap-7 text-sm font-semibold text-neutral-900 lg:flex">
             <Link href="#">
@@ -29,8 +29,12 @@ const Navbar = () => {
           </div>
         </div>
         <div className="flex flex-row items-center gap-3">
-          <button className="hidden md:flex">{StaticImage.googlePlay}</button>
-          <button className="hidden md:flex">{StaticImage.appStore}</button>
+          <button className="hidden max-w-32 md:flex">
+            {StaticImage.googlePlay}
+          </button>
+          <button className="hidden max-w-32 md:flex">
+            {StaticImage.appStore}
+          </button>
 
           <button className="flex h-10 w-10 items-center justify-center text-neutral-900 lg:hidden">
             <svg

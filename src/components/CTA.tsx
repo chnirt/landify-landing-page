@@ -17,15 +17,15 @@ const CTA = () => {
                 Get the App
               </span>
               <div className="flex flex-row gap-3">
-                <button>{StaticImage.googlePlay}</button>
-                <button>{StaticImage.appStore}</button>
+                <button className="max-w-32">{StaticImage.googlePlay}</button>
+                <button className="max-w-32">{StaticImage.appStore}</button>
               </div>
             </div>
           </div>
           <div className="flex flex-col items-center md:flex-row md:justify-center lg:flex-row lg:items-stretch">
-            <div>{StaticImage.mobile2}</div>
+            <div className="max-w-60">{StaticImage.mobile2}</div>
             <div className="flex items-end">
-              <div>{StaticImage.mobile3}</div>
+              <div className="max-w-60">{StaticImage.mobile3}</div>
             </div>
           </div>
         </div>

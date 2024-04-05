@@ -53,7 +53,9 @@ const Hero = () => {
           <HeroContent />
         </div>
 
-        <div className="flex flex-1 justify-center">{StaticImage.mobile}</div>
+        <div className="flex flex-1 justify-center">
+          <div className="max-w-80">{StaticImage.mobile}</div>
+        </div>
       </div>
     </div>
   );
