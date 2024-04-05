@@ -30,11 +30,23 @@ const config: Config = {
       },
       animation: {
         "infinite-scroll": "infinite-scroll 25s linear infinite",
+        "octocat-wave": "octocat-wave 560ms ease-in-out",
       },
       keyframes: {
         "infinite-scroll": {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(-100%)" },
+        },
+        "octocat-wave": {
+          "0%, 100%": {
+            transform: "rotate(0)",
+          },
+          "20%, 60%": {
+            transform: "rotate(-25deg)",
+          },
+          "40%, 80%": {
+            transform: "rotate(10deg)",
+          },
         },
       },
     },

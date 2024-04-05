@@ -52,7 +52,8 @@ const Achievements = () => {
                 start={0}
                 end={achievement.value}
                 suffix={achievement.suffix}
-                enableScrollSpy
+                scrollSpyOnce
+                scrollSpyDelay={800}
               />
             ) : null}
             {achievement?.label ? (

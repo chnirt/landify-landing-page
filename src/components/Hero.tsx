@@ -3,6 +3,7 @@
 import React from "react";
 import StaticImage from "./StaticImage";
 import { TypeAnimation } from "react-type-animation";
+import Link from "next/link";
 
 const HeroContent = () => {
   return (
@@ -27,13 +28,13 @@ const HeroContent = () => {
       </div>
 
       <div className="flex gap-4">
-        <a
+        <Link
           className="rounded-lg bg-primary px-4 py-2 text-base font-semibold text-white transition-all hover:bg-primary/70"
           href={"https://www.figma.com/community/file/894552273937682724"}
           target="_blank"
         >
           Get Started
-        </a>
+        </Link>
         <button className="flex flex-row gap-2 rounded-lg px-4 py-2 text-base font-semibold text-primary ring-primary transition-all hover:ring-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
