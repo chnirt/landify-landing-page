@@ -1,12 +1,24 @@
+"use client";
+
 import React from "react";
 import StaticImage from "./StaticImage";
+import { TypeAnimation } from "react-type-animation";
 
 const HeroContent = () => {
   return (
     <div className="flex flex-col gap-5">
       <div className="flex flex-col gap-4">
         <span className={"text-6xl font-bold text-neutral-900"}>
-          {"The easiest way to manage projects"}
+          <TypeAnimation
+            sequence={[
+              // Same substring at the start will only be typed out once, initially
+              "The easiest way to manage projects",
+              1000, // wait 1s before replacing "Mice" with "Hamsters"
+            ]}
+            wrapper="span"
+            speed={50}
+            repeat={Infinity}
+          />
         </span>
         <span className="text-lg font-normal text-neutral-600">
           From the small stuff to the big picture, organizes the work so teams

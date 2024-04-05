@@ -1,27 +1,34 @@
+"use client";
+
 import React from "react";
 import { Content } from "./Testimonial";
 import StaticImage from "./StaticImage";
+import CountUp from "react-countup";
 
 const ACHIEVEMENTS = [
   {
     icon: StaticImage.feature1,
     label: "Downloads per day",
-    value: "10,000+",
+    prefix: null,
+    value: 10000,
+    suffix: "+",
   },
   {
     icon: StaticImage.feature4,
     label: "Users",
-    value: "2 Million",
+    value: 2,
+    suffix: " Million",
   },
   {
     icon: StaticImage.feature5,
     label: "Clients",
-    value: "500+",
+    value: 500,
+    suffix: "+",
   },
   {
     icon: StaticImage.feature7,
     label: "Countries",
-    value: "140",
+    value: 140,
   },
 ];
 
@@ -40,9 +47,13 @@ const Achievements = () => {
           ) : null}
           <div className="flex flex-col">
             {achievement?.value ? (
-              <span className="text-4xl font-bold text-neutral-900">
-                {achievement.value}
-              </span>
+              <CountUp
+                className="text-4xl font-bold text-neutral-900"
+                start={0}
+                end={achievement.value}
+                suffix={achievement.suffix}
+                enableScrollSpy
+              />
             ) : null}
             {achievement?.label ? (
               <span className="text-base font-normal text-neutral-900">
