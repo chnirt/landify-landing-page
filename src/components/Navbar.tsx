@@ -3,11 +3,31 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import StaticImage from "./StaticImage";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { twMerge } from "tailwind-merge";
+
+const links = [
+  {
+    name: "Features",
+    href: "/features",
+  },
+  {
+    name: "Pricing",
+    href: "/pricing",
+  },
+  {
+    name: "Careers",
+    href: "/careers",
+  },
+  {
+    name: "Help",
+    href: "/help",
+  },
+];
 
 const Navbar = () => {
   const router = useRouter();
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
   return (
@@ -15,25 +35,35 @@ const Navbar = () => {
       <div className="fixed top-0 z-10 flex w-full justify-center backdrop-blur">
         <div className="responsive-container container flex flex-row justify-between py-4 md:py-5 lg:py-5">
           <div className="flex items-center gap-9">
-            <Link
-              href={"https://www.figma.com/community/file/894552273937682724"}
-              target="_blank"
-            >
+            <Link href={"/"}>
               <div className="max-w-32">{StaticImage.logo}</div>
             </Link>
             <div className="hidden gap-7 text-sm font-semibold text-neutral-900 lg:flex">
-              <Link href="#">
-                <span>Features</span>
-              </Link>
-              <Link href="#">
-                <span>Pricing</span>
-              </Link>
-              <Link href="#">
-                <span>Careers</span>
-              </Link>
-              <Link href="#">
-                <span>Help</span>
-              </Link>
+              {links.map((link, li) => {
+                const isSelected = link.href === pathname;
+                return (
+                  <Link
+                    key={["link", li].join("-")}
+                    href={link.href}
+                    className="group"
+                  >
+                    <span
+                      className={twMerge(
+                        "transition-all group-hover:text-primary",
+                        isSelected && "text-primary",
+                      )}
+                    >
+                      {link.name}
+                    </span>
+                    <span
+                      className={twMerge(
+                        "block h-0.5 max-w-0 bg-primary transition-all group-hover:max-w-full",
+                        isSelected && "max-w-full",
+                      )}
+                    />
+                  </Link>
+                );
+              })}
             </div>
           </div>
 

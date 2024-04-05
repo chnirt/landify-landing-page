@@ -5,8 +5,8 @@ const HeroContent = () => {
   return (
     <div className="flex flex-col gap-5">
       <div className="flex flex-col gap-4">
-        <span className="text-6xl font-bold text-neutral-900">
-          The easiest way to manage projects
+        <span className={"text-6xl font-bold text-neutral-900"}>
+          {"The easiest way to manage projects"}
         </span>
         <span className="text-lg font-normal text-neutral-600">
           From the small stuff to the big picture, organizes the work so teams
@@ -15,10 +15,14 @@ const HeroContent = () => {
       </div>
 
       <div className="flex gap-4">
-        <button className="bg-primary hover:bg-primary/70 rounded-lg px-4 py-2 text-base font-semibold text-white transition-all">
+        <a
+          className="rounded-lg bg-primary px-4 py-2 text-base font-semibold text-white transition-all hover:bg-primary/70"
+          href={"https://www.figma.com/community/file/894552273937682724"}
+          target="_blank"
+        >
           Get Started
-        </button>
-        <button className="text-primary ring-primary flex flex-row gap-2 rounded-lg px-4 py-2 text-base font-semibold transition-all hover:ring-1">
+        </a>
+        <button className="flex flex-row gap-2 rounded-lg px-4 py-2 text-base font-semibold text-primary ring-primary transition-all hover:ring-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

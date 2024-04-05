@@ -15,8 +15,8 @@ const LogoCloudsV2 = () => {
             />
           </div>
           <div className="lg:flex-1">
-            <div className="bg-tertiary w-full rounded-b-full px-7 py-6 md:mx-7 md:my-6 lg:px-11 lg:py-10">
-              <div className="gap-1/7 grid h-full grid-cols-8 grid-rows-3">
+            <div className="w-full rounded-b-full bg-tertiary px-7 py-6 md:mx-7 md:my-6 lg:px-11 lg:py-10">
+              <div className="grid h-full grid-cols-8 grid-rows-3 gap-1/7">
                 {[
                   {
                     icon: StaticImage.tool1,
@@ -43,7 +43,7 @@ const LogoCloudsV2 = () => {
                   <div
                     key={["tool", ti].join("-")}
                     className={twMerge(
-                      "col-span-2 row-span-2 flex aspect-square w-full items-center justify-center",
+                      "col-span-2 row-span-2 flex aspect-square w-full items-center justify-center transition-all hover:scale-110",
                       ti > 3 && "translate-x-full",
                     )}
                   >
@@ -52,42 +52,6 @@ const LogoCloudsV2 = () => {
                 ))}
               </div>
             </div>
-
-            {/* <div className="bg-tertiary flex aspect-[2] w-full flex-col justify-between gap-16 rounded-b-full p-8">
-              <div className="flex gap-16">
-                {[
-                  {
-                    icon: StaticImage.tool1,
-                  },
-                  {
-                    icon: StaticImage.tool2,
-                  },
-                  {
-                    icon: StaticImage.tool3,
-                  },
-                  {
-                    icon: StaticImage.tool4,
-                  },
-                ].map((tool, ti) => (
-                  <div key={["tool", ti].join("-")}>{tool.icon}</div>
-                ))}
-              </div>
-              <div className="flex gap-16 px-16">
-                {[
-                  {
-                    icon: StaticImage.tool5,
-                  },
-                  {
-                    icon: StaticImage.tool6,
-                  },
-                  {
-                    icon: StaticImage.tool7,
-                  },
-                ].map((tool, ti) => (
-                  <div key={["tool", ti].join("-")}>{tool.icon}</div>
-                ))}
-              </div>
-            </div> */}
           </div>
         </div>
       </div>
