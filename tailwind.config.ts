@@ -48,9 +48,12 @@ const config: Config = {
             transform: "rotate(10deg)",
           },
         },
+        
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-animated')
+  ],
 };
 export default config;

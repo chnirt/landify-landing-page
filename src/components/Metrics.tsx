@@ -4,6 +4,8 @@ import React from "react";
 import { Content } from "./Testimonial";
 import StaticImage from "./StaticImage";
 import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
+import { twMerge } from "tailwind-merge";
 
 const ACHIEVEMENTS = [
   {
@@ -69,22 +71,31 @@ const Achievements = () => {
 };
 
 const Metrics = () => {
+  const { ref, inView } = useInView({
+    /* Optional options */
+    threshold: 0,
+  });
+
   return (
-    <div className="flex justify-center">
+    <section ref={ref} className="flex justify-center">
       <div className="container">
         <div className="responsive-container flex min-h-[388px] flex-col gap-7 py-14 lg:flex-row lg:items-center">
           <div className="lg:flex-1">
-            <Content
-              title="Our 18 years of achievements"
-              description="With our super powers we have reached this"
-            />
+            <div className={twMerge("opacity-0", inView && "animate-fade-right")}>
+              <Content
+                title="Our 18 years of achievements"
+                description="With our super powers we have reached this"
+              />
+            </div>
           </div>
           <div className="lg:flex-1">
-            <Achievements />
+            <div className={twMerge("opacity-0", inView && "animate-fade-left")}>
+              <Achievements />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

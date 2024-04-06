@@ -1,5 +1,9 @@
+"use client"
+
 import React from "react";
 import StaticImage from "./StaticImage";
+import { useInView } from "react-intersection-observer";
+import { twMerge } from "tailwind-merge";
 
 export const Content = ({
   title,
@@ -59,8 +63,14 @@ const Card = ({
 };
 
 const Testimonial = () => {
+  const { ref, inView } = useInView({
+    /* Optional options */
+    threshold: 0,
+  });
+
+
   return (
-    <div className="bg-secondary/100 flex min-h-dvh justify-center">
+    <section ref={ref} className="bg-secondary/100 flex min-h-dvh justify-center">
       <div className="container relative flex items-center">
         <div className="absolute left-2 top-12 md:left-5 md:top-16 lg:left-0 lg:top-16">
           {StaticImage.quoteMark}
@@ -68,42 +78,50 @@ const Testimonial = () => {
 
         <div className="responsive-container relative grid gap-8 py-20 lg:grid-flow-col lg:grid-cols-12 lg:py-32">
           <div className="row-span-3 lg:col-start-2 lg:col-end-7">
-            <Content
-              title="Real Stories from Real Customers"
-              description="Get inspired by these stories."
-            />
+            <div className={twMerge("opacity-0", inView && "animate-fade-right animate-ease-linear")}>
+              <Content
+                title="Real Stories from Real Customers"
+                description="Get inspired by these stories."
+              />
+            </div>
           </div>
           <div className="lg:col-start-7 lg:col-end-11 lg:row-span-9 lg:row-start-2">
-            <Card
-              logo={StaticImage.airbnb}
-              content={
-                "I used landify and created a landing page for my startup within a week. The Landify UI Kit is simple and highly intuitive, so anyonecan use it."
-              }
-              creator={"Jane Cooper"}
-              role={"CEO, Airbnb"}
-            />
+            <div className={twMerge("opacity-0", inView && "animate-fade-left animate-ease-linear")}>
+              <Card
+                logo={StaticImage.airbnb}
+                content={
+                  "I used landify and created a landing page for my startup within a week. The Landify UI Kit is simple and highly intuitive, so anyonecan use it."
+                }
+                creator={"Jane Cooper"}
+                role={"CEO, Airbnb"}
+              />
+            </div>
           </div>
           <div className="lg:col-start-3 lg:col-end-7 lg:row-span-12 lg:row-start-5">
-            <Card
-              logo={StaticImage.hubSpot}
-              content={
-                "To quickly start my startup landing page design, I was looking for a landing page UI Kit. Landify is one of the best landing page UI kit I have come across. It’s so flexible, well organised and easily editable."
-              }
-              creator={"Floyd Miles"}
-              role={"Vice President, GoPro"}
-            />
+            <div className={twMerge("opacity-0", inView && "animate-fade-right animate-ease-linear")}>
+              <Card
+                logo={StaticImage.hubSpot}
+                content={
+                  "To quickly start my startup landing page design, I was looking for a landing page UI Kit. Landify is one of the best landing page UI kit I have come across. It’s so flexible, well organised and easily editable."
+                }
+                creator={"Floyd Miles"}
+                role={"Vice President, GoPro"}
+              />
+            </div>
           </div>
           <div className="lg:col-start-7 lg:col-end-10 lg:row-span-8">
-            <Card
-              logo={StaticImage.strapi}
-              content={"Landify saved our time in designing my company page."}
-              creator={"Kristin Watson"}
-              role={"Co-Founder, Strapi"}
-            />
+            <div className={twMerge("opacity-0", inView && "animate-fade-left animate-ease-linear")}>
+              <Card
+                logo={StaticImage.strapi}
+                content={"Landify saved our time in designing my company page."}
+                creator={"Kristin Watson"}
+                role={"Co-Founder, Strapi"}
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

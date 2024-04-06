@@ -1,6 +1,9 @@
+"use client"
+
 import React from "react";
-import Image from "next/image";
 import StaticImage from "./StaticImage";
+import { useInView } from "react-intersection-observer";
+import { twMerge } from "tailwind-merge";
 
 const FEATURES = [
   {
@@ -30,10 +33,15 @@ const FEATURES = [
 ];
 
 const Features = () => {
+  const { ref, inView } = useInView({
+    /* Optional options */
+    threshold: 0,
+  });
+  
   return (
-    <div className="flex min-h-dvh justify-center">
+    <section ref={ref} className="flex min-h-dvh justify-center">
       <div className="responsive-container container flex flex-col items-center justify-center gap-14 py-12 md:py-0 lg:py-0">
-        <div className="flex max-w-[800px] flex-col items-center gap-7">
+        <div className={twMerge("flex max-w-[800px] flex-col items-center gap-7 opacity-0", inView && "animate-fade-up")}>
           <span className="text-center text-5xl font-bold text-neutral-900">
             Tailor-made features
           </span>
@@ -48,7 +56,7 @@ const Features = () => {
             {FEATURES.map((feature, fi) => (
               <div
                 key={["feature", fi].join("-")}
-                className="flex flex-col items-center gap-6"
+                className={twMerge("flex flex-col items-center gap-6", inView && "animate-fade-up")}
               >
                 {feature?.icon ? (
                   <div className="max-w-8">{feature.icon}</div>
@@ -69,7 +77,7 @@ const Features = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

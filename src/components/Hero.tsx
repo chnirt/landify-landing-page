@@ -4,6 +4,8 @@ import React from "react";
 import StaticImage from "./StaticImage";
 import { TypeAnimation } from "react-type-animation";
 import Link from "next/link";
+import { twMerge } from "tailwind-merge";
+import { useInView } from "react-intersection-observer";
 
 const HeroContent = () => {
   return (
@@ -63,18 +65,25 @@ const HeroContent = () => {
 };
 
 const Hero = () => {
+  const { ref, inView } = useInView({
+    /* Optional options */
+    threshold: 0,
+  });
+
   return (
-    <div className="flex min-h-dvh justify-center bg-[url('../photos/background.png')] bg-cover bg-center bg-no-repeat">
+    <section ref={ref} className="flex min-h-dvh justify-center bg-[url('../photos/background.png')] bg-cover bg-center bg-no-repeat">
       <div className="responsive-container container flex flex-col items-center justify-center gap-8 pt-20 lg:flex-row lg:pt-0">
         <div className="flex-1">
           <HeroContent />
         </div>
 
         <div className="flex flex-1 justify-center">
-          <div className="max-w-80">{StaticImage.mobile}</div>
+          <div className={twMerge("max-w-80 opacity-0",
+            inView && "animate-fade-left"
+          )}>{StaticImage.mobile}</div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
