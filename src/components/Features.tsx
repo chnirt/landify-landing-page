@@ -37,7 +37,7 @@ const Features = () => {
     /* Optional options */
     threshold: 0,
   });
-  
+
   return (
     <section ref={ref} className="flex min-h-dvh justify-center">
       <div className="responsive-container container flex flex-col items-center justify-center gap-14 py-12 md:py-0 lg:py-0">
@@ -56,7 +56,14 @@ const Features = () => {
             {FEATURES.map((feature, fi) => (
               <div
                 key={["feature", fi].join("-")}
-                className={twMerge("flex flex-col items-center gap-6", inView && "animate-fade-up")}
+                className={twMerge("flex flex-col items-center gap-6", inView ? 'opacity-100 translate-y-0 transition-all duration-1000' : "opacity-0 translate-y-full",
+                  fi === 0 && "delay-0",
+                  fi === 1 && "delay-75",
+                  fi === 2 && "delay-100",
+                  fi === 3 && "delay-150",
+                  fi === 4 && "delay-200",
+                  fi === 5 && "delay-300",
+                )}
               >
                 {feature?.icon ? (
                   <div className="max-w-8">{feature.icon}</div>
