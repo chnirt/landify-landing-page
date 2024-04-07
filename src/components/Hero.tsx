@@ -71,11 +71,11 @@ const Hero = () => {
           <HeroContent />
         </div>
 
-        <InView animateClassName="animate-fade-left">
-          <div className="flex flex-1 justify-center">
+        <div className="flex flex-1 justify-center">
+          <InView animateClassName="animate-fade-left">
             <div className="max-w-80">{StaticImage.mobile}</div>
-          </div>
-        </InView>
+          </InView>
+        </div>
       </div>
     </section>
   );
