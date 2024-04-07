@@ -136,40 +136,45 @@ const Navbar = () => {
       >
         <div className="flex h-full flex-col items-center justify-center gap-7 text-xl font-semibold text-neutral-300 backdrop-blur-sm transition-all lg:flex lg:flex-col">
           <a
-            href="#"
             onClick={(e) => {
               e.preventDefault();
-              router.push("#");
+              router.push("/");
+              setOpen(false);
+            }}
+          >
+            <span>Home</span>
+          </a>
+          <a
+            onClick={(e) => {
+              e.preventDefault();
+              router.push("/features");
               setOpen(false);
             }}
           >
             <span>Features</span>
           </a>
           <a
-            href="#"
             onClick={(e) => {
               e.preventDefault();
-              router.push("#");
+              router.push("/pricing");
               setOpen(false);
             }}
           >
             <span>Pricing</span>
           </a>
           <a
-            href="#"
             onClick={(e) => {
               e.preventDefault();
-              router.push("#");
+              router.push("/careers");
               setOpen(false);
             }}
           >
             <span>Careers</span>
           </a>
           <a
-            href="#"
             onClick={(e) => {
               e.preventDefault();
-              router.push("#");
+              router.push("/help");
               setOpen(false);
             }}
           >

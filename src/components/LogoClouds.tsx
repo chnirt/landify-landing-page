@@ -25,7 +25,7 @@ const LOGOS = [
 
 const Logo = () => {
   return (
-    <div className="responsive-container animate-infinite-scroll grid min-h-14 grid-cols-2 items-center gap-16 pr-16 md:grid-cols-4 lg:grid-flow-col lg:grid-cols-none">
+    <div className="grid min-h-14 animate-infinite-scroll grid-cols-2 items-center gap-16 pr-16 md:grid-cols-4 lg:grid-flow-col lg:grid-cols-none">
       {LOGOS.map((logo, li) => {
         const isFourth = li === 4;
         return (
@@ -58,10 +58,12 @@ const Loop = ({ children }: { children: React.ReactNode }) => {
 const LogoClouds = () => {
   return (
     <div className="flex justify-center py-3">
-      <div className="container relative overflow-hidden border-b-[1px] border-t-[1px] border-neutral-200 py-6">
-        <Loop>
-          <Logo />
-        </Loop>
+      <div className="responsive-container container">
+        <div className="overflow-hidden relative border-b-[1px] border-t-[1px] border-neutral-200 py-6">
+          <Loop>
+            <Logo />
+          </Loop>
+        </div>
       </div>
     </div>
   );
