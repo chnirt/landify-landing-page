@@ -8,7 +8,7 @@ import InView from "./InView";
 
 const HeroContent = () => {
   return (
-    <div className="flex flex-col gap-5 p-10">
+    <div className="flex flex-col gap-5">
       <div className="flex flex-col gap-4">
         <span className={"text-6xl font-bold text-neutral-900"}>
           <TypeAnimation
