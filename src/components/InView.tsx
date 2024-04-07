@@ -19,7 +19,11 @@ const InView = ({
   return (
     <div
       ref={ref}
-      className={twMerge("opacity-0", inView ? animateClassName : className)}
+      className={twMerge(
+        "opacity-0",
+        className,
+        inView && ["opacity-100", animateClassName].join(" "),
+      )}
     >
       {children}
     </div>

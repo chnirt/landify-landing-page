@@ -35,10 +35,10 @@ const FEATURES = [
 const Features = () => {
   return (
     <section className="flex min-h-dvh justify-center">
-      <div className="responsive-container container flex flex-col items-center justify-center gap-14 py-12 md:py-0 lg:py-0">
+      <div className="responsive-container container flex flex-col items-center justify-center gap-12 py-12 sm:gap-11 md:gap-16 md:py-20 lg:gap-16 lg:py-0">
         <InView animateClassName="animate-fade-up">
           <div className="flex max-w-[800px] flex-col items-center gap-7">
-            <span className="text-center text-5xl font-bold text-neutral-900">
+            <span className="text-center text-4xl font-bold text-neutral-900 sm:text-4xl md:text-4xl lg:text-5xl">
               Tailor-made features
             </span>
             <span className="text-center text-lg font-normal text-neutral-900">
@@ -53,26 +53,24 @@ const Features = () => {
             {FEATURES.map((feature, fi) => (
               <InView
                 key={["feature", fi].join("-")}
-                className="translate-y-full opacity-0"
-                animateClassName="translate-y-0 opacity-100 transition-all duration-1000"
+                className={twMerge(
+                  "translate-y-full opacity-0 duration-1000",
+                  fi === 0 && "delay-0",
+                  fi === 1 && "delay-75",
+                  fi === 2 && "delay-100",
+                  fi === 3 && "delay-150",
+                  fi === 4 && "delay-200",
+                  fi === 5 && "delay-300",
+                )}
+                animateClassName="translate-y-0 opacity-100 transition-all"
               >
-                <div
-                  className={twMerge(
-                    "flex flex-col items-center gap-6",
-                    fi === 0 && "delay-0",
-                    fi === 1 && "delay-75",
-                    fi === 2 && "delay-100",
-                    fi === 3 && "delay-150",
-                    fi === 4 && "delay-200",
-                    fi === 5 && "delay-300",
-                  )}
-                >
+                <div className="flex flex-col items-center gap-7 sm:gap-7 md:gap-5 lg:gap-8">
                   {feature?.icon ? (
                     <div className="max-w-8">{feature.icon}</div>
                   ) : null}
-                  <div className="flex flex-col items-center gap-4">
+                  <div className="flex flex-col items-center gap-5 sm:gap-5 md:gap-4 lg:gap-4">
                     {feature?.name ? (
-                      <span className="text-3xl font-bold text-neutral-900">
+                      <span className="text-2xl font-bold text-neutral-900 sm:text-2xl md:text-2xl lg:text-3xl">
                         {feature.name}
                       </span>
                     ) : null}

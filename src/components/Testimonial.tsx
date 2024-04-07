@@ -4,6 +4,7 @@ import React from "react";
 import StaticImage from "./StaticImage";
 import { useInView } from "react-intersection-observer";
 import InView from "./InView";
+import { Typography } from "./Typography";
 
 export const Content = ({
   title,
@@ -12,13 +13,27 @@ export const Content = ({
   title: string;
   description: string;
 }) => (
-  <div className="flex flex-col gap-5">
-    {title ? (
-      <span className="text-5xl font-bold leading-[60px] tracking-tight text-neutral-900">
+  <div className="flex flex-col gap-6 sm:gap-6 md:gap-6 lg:gap-7">
+    {/* {title ? (
+      <span className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[60px] tracking-tight text-neutral-900">
         {title}
       </span>
+    ) : null} */}
+    {title ? (
+      <Typography variant="h2" className="text-neutral-900">
+        {title}
+      </Typography>
     ) : null}
-    {description ? <span>{description}</span> : null}
+    {/* {description ? (
+      <span className="text-base sm:text-base md:text-base lg:text-lg">
+        {description}
+      </span>
+    ) : null} */}
+    {description ? (
+      <Typography variant="body" className="font-normal text-neutral-900">
+        {description}
+      </Typography>
+    ) : null}
   </div>
 );
 
@@ -34,17 +49,17 @@ const Card = ({
   role: string;
 }) => {
   return (
-    <div className="flex flex-col gap-8 rounded-lg bg-white px-9 py-8 shadow-md">
+    <div className="flex flex-col gap-8 rounded-lg bg-white px-9 py-8 shadow-md sm:gap-8 md:gap-9 lg:gap-8">
       {logo ? <div className="max-w-28">{logo}</div> : null}
-      <div className="flex items-start justify-start gap-4">
+      <div className="flex items-start justify-start gap-4 lg:gap-3">
         {StaticImage.smallQuoteMark}
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-9">
           {content ? (
             <span className="text-lg font-normal text-neutral-900">
               {content}
             </span>
           ) : null}
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-3">
             {creator ? (
               <span className="text-lg font-bold text-neutral-900">
                 {creator}

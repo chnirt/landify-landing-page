@@ -5,6 +5,7 @@ import { Content } from "./Testimonial";
 import StaticImage from "./StaticImage";
 import CountUp from "react-countup";
 import InView from "./InView";
+import { Typography } from "./Typography";
 
 const ACHIEVEMENTS = [
   {
@@ -48,19 +49,20 @@ const Achievements = () => {
           ) : null}
           <div className="flex flex-col">
             {achievement?.value ? (
-              <CountUp
-                className="text-4xl font-bold text-neutral-900"
-                start={0}
-                end={achievement.value}
-                suffix={achievement.suffix}
-                scrollSpyOnce
-                scrollSpyDelay={800}
-              />
+              <Typography variant="h3" className="text-neutral-900">
+                <CountUp
+                  start={0}
+                  end={achievement.value}
+                  suffix={achievement.suffix}
+                  scrollSpyOnce
+                  scrollSpyDelay={800}
+                />
+              </Typography>
             ) : null}
             {achievement?.label ? (
-              <span className="text-base font-normal text-neutral-900">
+              <Typography variant="body-small" className="text-neutral-900">
                 {achievement.label}
-              </span>
+              </Typography>
             ) : null}
           </div>
         </div>
@@ -73,7 +75,7 @@ const Metrics = () => {
   return (
     <section className="flex justify-center">
       <div className="container">
-        <div className="responsive-container flex min-h-[388px] flex-col gap-7 py-14 lg:flex-row lg:items-center">
+        <div className="responsive-container flex flex-col gap-7 py-12 md:py-20 lg:flex-row lg:items-center lg:py-24">
           <div className="lg:flex-1">
             <InView animateClassName="animate-fade-right">
               <Content

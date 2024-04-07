@@ -8,7 +8,7 @@ import Testimonial from "@/components/Testimonial";
 
 export default function Home() {
   return (
-    <main>
+    <main className="overflow-y-scroll">
       <Hero />
       <LogoClouds />
       <Features />

@@ -57,9 +57,9 @@ const Loop = ({ children }: { children: React.ReactNode }) => {
 
 const LogoClouds = () => {
   return (
-    <div className="flex justify-center py-3">
+    <div className="flex justify-center py-4 sm:py-4 md:py-4 lg:py-3">
       <div className="responsive-container container">
-        <div className="overflow-hidden relative border-b-[1px] border-t-[1px] border-neutral-200 py-6">
+        <div className="relative overflow-hidden border-b-[1px] border-t-[1px] border-neutral-200 py-6">
           <Loop>
             <Logo />
           </Loop>

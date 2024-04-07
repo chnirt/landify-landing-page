@@ -5,12 +5,13 @@ import StaticImage from "./StaticImage";
 import { TypeAnimation } from "react-type-animation";
 import Link from "next/link";
 import InView from "./InView";
+import { Typography } from "./Typography";
 
 const HeroContent = () => {
   return (
     <div className="flex flex-col gap-5">
       <div className="flex flex-col gap-4">
-        <span className={"text-6xl font-bold text-neutral-900"}>
+        <Typography variant="h1" className="text-neutral-900">
           <TypeAnimation
             sequence={[
               // Same substring at the start will only be typed out once, initially
@@ -21,7 +22,7 @@ const HeroContent = () => {
             speed={50}
             repeat={Infinity}
           />
-        </span>
+        </Typography>
         <span className="text-lg font-normal text-neutral-600">
           From the small stuff to the big picture, organizes the work so teams
           know what to do, why it matters, and how to get it done.
@@ -30,13 +31,13 @@ const HeroContent = () => {
 
       <div className="flex gap-4">
         <Link
-          className="rounded-lg bg-primary px-4 py-2 text-base font-semibold text-white transition-all hover:bg-primary/70"
+          className="rounded-lg bg-primary px-6 py-4 text-base font-semibold text-white transition-all hover:bg-primary/70"
           href={"https://www.figma.com/community/file/894552273937682724"}
           target="_blank"
         >
           Get Started
         </Link>
-        <button className="flex flex-row gap-2 rounded-lg px-4 py-2 text-base font-semibold text-primary ring-primary transition-all hover:ring-1">
+        <button className="flex flex-row gap-2 rounded-lg px-6 py-4 text-base font-semibold text-primary ring-primary transition-all hover:ring-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
