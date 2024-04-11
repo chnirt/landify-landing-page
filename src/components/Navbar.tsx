@@ -36,15 +36,16 @@ const Navbar = () => {
       <div className="flex w-full justify-center backdrop-blur">
         <div className="container flex items-center justify-between px-5 py-4 sm:px-5 sm:py-4 md:px-10 md:py-5 lg:px-0 lg:py-5">
           <div className="flex gap-10">
-            <a
+            <button
               onClick={(e) => {
                 e.preventDefault();
                 router.push("/");
                 setOpen(false);
               }}
+              aria-label="logo"
             >
               <div className="max-w-32">{StaticImage.logo}</div>
-            </a>
+            </button>
 
             <div
               className={twMerge(
@@ -66,7 +67,7 @@ const Navbar = () => {
               ].map((link, li) => {
                 const isSelected = link.href === pathname && !open;
                 return (
-                  <a
+                  <button
                     key={["link", li].join("-")}
                     className={twMerge(
                       "group animate-fade-left",
@@ -80,6 +81,7 @@ const Navbar = () => {
                       // router.push(link.href);
                       setOpen(false);
                     }}
+                    aria-label={link.name}
                   >
                     <span
                       className={twMerge(
@@ -95,7 +97,7 @@ const Navbar = () => {
                         isSelected && "max-w-full",
                       )}
                     />
-                  </a>
+                  </button>
                 );
               })}
             </div>
@@ -109,6 +111,7 @@ const Navbar = () => {
             <button
               className="z-20 h-10 w-10 items-center justify-center text-neutral-900 transition-all lg:hidden"
               onClick={() => setOpen((prevState) => !prevState)}
+              aria-label="hamburger-menu"
             >
               {open ? (
                 <svg
@@ -142,13 +145,14 @@ const Navbar = () => {
                 </svg>
               )}
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
 
       <Link
         href={"https://github.com/chnirt/landify-landing-page"}
         target="_blank"
+        aria-label="github"
       >
         <Octocat />
       </Link>
