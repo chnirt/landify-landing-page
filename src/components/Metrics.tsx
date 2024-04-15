@@ -54,9 +54,10 @@ const Achievements = () => {
                   start={0}
                   end={achievement.value}
                   suffix={achievement.suffix}
-                  scrollSpyOnce
-                  scrollSpyDelay={800}
-                />
+                  enableScrollSpy={true}
+                >
+                  {({ countUpRef }) => <span ref={countUpRef} />}
+                </CountUp>
               </Typography>
             ) : null}
             {achievement?.label ? (

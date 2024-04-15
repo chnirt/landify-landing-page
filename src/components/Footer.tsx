@@ -11,8 +11,12 @@ const Footer = () => {
             <div className="max-w-8">{StaticImage.logo2}</div>
             <div className="flex flex-col gap-4">
               <div className="flex gap-6 text-base font-normal text-white">
-                <span>Download Now</span>
-                <span>License</span>
+                <Link href="#">
+                  <span>Download Now</span>
+                </Link>
+                <Link href="#">
+                  <span>License</span>
+                </Link>
               </div>
               <div className="grid grid-cols-4 gap-5 text-base font-normal text-white">
                 <Link href="#">

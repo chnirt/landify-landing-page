@@ -3,11 +3,14 @@
 import React from "react";
 import StaticImage from "./StaticImage";
 import { TypeAnimation } from "react-type-animation";
-import Link from "next/link";
 import InView from "./InView";
 import { Typography } from "./Typography";
+import { Button } from "./Button";
+import { useRouter } from "next/navigation";
 
 const HeroContent = () => {
+  const router = useRouter();
+
   return (
     <div className="flex flex-col gap-5">
       <div className="flex flex-col gap-4">
@@ -30,14 +33,18 @@ const HeroContent = () => {
       </div>
 
       <div className="flex gap-4">
-        <Link
-          className="rounded-lg bg-primary px-6 py-4 text-base font-semibold text-white transition-all hover:bg-primary/70"
-          href={"https://www.figma.com/community/file/894552273937682724"}
-          target="_blank"
+        <Button
+          variant="primary"
+          onClick={() => {
+            window.open(
+              "https://www.figma.com/community/file/894552273937682724",
+              "_ blank",
+            );
+          }}
         >
           Get Started
-        </Link>
-        <button className="flex flex-row gap-2 rounded-lg px-6 py-4 text-base font-semibold text-primary ring-primary transition-all hover:ring-1">
+        </Button>
+        <Button variant="outline">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -58,7 +65,7 @@ const HeroContent = () => {
             />
           </svg>
           Watch Video
-        </button>
+        </Button>
       </div>
     </div>
   );
