@@ -41,83 +41,52 @@ const StaticImage = () => {
 };
 
 StaticImage.logo = (
-  <Image src={logo} alt="logo" width={128} height={32} priority />
+  <Image src={logo} alt="logo" width={128} height={32} loading="lazy" />
 );
 StaticImage.googlePlay = (
-  <Image src={googlePlay} alt="google-play" width={135} height={40} priority />
+  <Image
+    src={googlePlay}
+    alt="google-play"
+    width={135}
+    height={40}
+    loading="lazy"
+  />
 );
 StaticImage.appStore = (
-  <Image src={appStore} alt="app-store" width={135} height={40} priority />
+  <Image
+    src={appStore}
+    alt="app-store"
+    width={135}
+    height={40}
+    loading="lazy"
+  />
 );
 StaticImage.mobile = (
-  <Image
-    src={mobile}
-    alt="mobile"
-    height="0"
-    sizes="100vw"
-    className="h-auto w-full"
-    priority
-  />
+  <Image src={mobile} alt="mobile" width={320} height={640} loading="lazy" />
 );
 StaticImage.airbnb = (
-  <Image
-    src={airbnb}
-    alt="airbnb"
-    height="0"
-    sizes="100vw"
-    className="h-auto w-full"
-    priority
-  />
+  <Image src={airbnb} alt="airbnb" width={90} height={28} loading="lazy" />
 );
 StaticImage.hubSpot = (
-  <Image
-    src={hubSpot}
-    alt="hubSpot"
-    height="0"
-    sizes="100vw"
-    className="h-auto w-full"
-    priority
-  />
+  <Image src={hubSpot} alt="hubSpot" width={86} height={24} loading="lazy" />
 );
 StaticImage.google = (
-  <Image
-    src={google}
-    alt="google"
-    height="0"
-    sizes="100vw"
-    className="h-auto w-full"
-    priority
-  />
+  <Image src={google} alt="google" width={84} height={28} loading="lazy" />
 );
 StaticImage.microsoft = (
   <Image
     src={microsoft}
     alt="microsoft"
-    height="0"
-    sizes="100vw"
-    className="h-auto w-full"
-    priority
+    width={122}
+    height={26}
+    loading="lazy"
   />
 );
 StaticImage.walmart = (
-  <Image
-    src={walmart}
-    alt="walmart"
-    height="0"
-    sizes="100vw"
-    className="h-auto w-full"
-    priority
-  />
+  <Image src={walmart} alt="walmart" width={112} height={26} loading="lazy" />
 );
 StaticImage.fedEx = (
-  <Image
-    src={fedEx}
-    alt="fedEx"
-    height="0"
-    sizes="100vw"
-    className="h-auto w-full"
-    priority
-  />
+  <Image src={fedEx} alt="fedEx" width={80} height={24} loading="lazy" />
 );
 StaticImage.feature1 = (
   <Image
@@ -126,7 +95,6 @@ StaticImage.feature1 = (
     height="0"
     sizes="100vw"
     className="h-auto w-full"
-    priority
   />
 );
 StaticImage.feature2 = (
@@ -136,7 +104,6 @@ StaticImage.feature2 = (
     height="0"
     sizes="100vw"
     className="h-auto w-full"
-    priority
   />
 );
 StaticImage.feature3 = (
@@ -146,7 +113,6 @@ StaticImage.feature3 = (
     height="0"
     sizes="100vw"
     className="h-auto w-full"
-    priority
   />
 );
 StaticImage.feature4 = (
@@ -156,7 +122,6 @@ StaticImage.feature4 = (
     height="0"
     sizes="100vw"
     className="h-auto w-full"
-    priority
   />
 );
 StaticImage.feature5 = (
@@ -166,7 +131,6 @@ StaticImage.feature5 = (
     height="0"
     sizes="100vw"
     className="h-auto w-full"
-    priority
   />
 );
 StaticImage.feature6 = (
@@ -176,7 +140,6 @@ StaticImage.feature6 = (
     height="0"
     sizes="100vw"
     className="h-auto w-full"
-    priority
   />
 );
 StaticImage.feature7 = (
@@ -186,44 +149,55 @@ StaticImage.feature7 = (
     height="0"
     sizes="100vw"
     className="h-auto w-full"
-    priority
   />
 );
 StaticImage.quoteMark = (
-  <Image src={quoteMark} alt="quote-mark" width={142} height={116} priority />
+  <Image
+    src={quoteMark}
+    alt="quote-mark"
+    width={142}
+    height={116}
+    loading="lazy"
+  />
 );
 StaticImage.smallQuoteMark = (
-  <Image src={smallQuoteMark} alt="small-quote-mark" priority />
+  <Image src={smallQuoteMark} alt="small-quote-mark" width={16} height={13} />
 );
 StaticImage.strapi = (
-  <Image src={strapi} alt="strapi" className="h-full w-full" priority />
+  <Image src={strapi} alt="strapi" width={112} height={32} loading="lazy" />
 );
 
 StaticImage.tool1 = (
-  <Image src={tool1} alt="tool1" className="h-full w-full" priority />
+  <Image src={tool1} alt="tool1" width={64} height={64} loading="lazy" />
 );
 StaticImage.tool2 = (
-  <Image src={tool2} alt="tool2" className="h-full w-full" priority />
+  <Image src={tool2} alt="tool2" width={64} height={64} loading="lazy" />
 );
 StaticImage.tool3 = (
-  <Image src={tool3} alt="tool3" className="h-full w-full" priority />
+  <Image src={tool3} alt="tool3" width={64} height={64} loading="lazy" />
 );
 StaticImage.tool4 = (
-  <Image src={tool4} alt="tool4" className="h-full w-full" priority />
+  <Image src={tool4} alt="tool4" width={64} height={64} loading="lazy" />
 );
 StaticImage.tool5 = (
-  <Image src={tool5} alt="tool5" className="h-full w-full" priority />
+  <Image src={tool5} alt="tool5" width={64} height={64} loading="lazy" />
 );
 StaticImage.tool6 = (
-  <Image src={tool6} alt="tool6" className="h-full w-full" priority />
+  <Image src={tool6} alt="tool6" width={64} height={64} loading="lazy" />
 );
 StaticImage.tool7 = (
-  <Image src={tool7} alt="tool7" className="h-full w-full" priority />
+  <Image src={tool7} alt="tool7" width={64} height={64} loading="lazy" />
 );
 
-StaticImage.mobile2 = <Image src={mobile2} alt="mobile2" priority />;
-StaticImage.mobile3 = <Image src={mobile3} alt="mobile3" priority />;
+StaticImage.mobile2 = (
+  <Image src={mobile2} alt="mobile2" width={232} height={464} loading="lazy" />
+);
+StaticImage.mobile3 = (
+  <Image src={mobile3} alt="mobile3" width={232} height={464} loading="lazy" />
+);
 
-StaticImage.logo2 = <Image src={logo2} alt="logo2" priority />;
+StaticImage.logo2 = (
+  <Image src={logo2} alt="logo2" width={32} height={32} loading="lazy" />
+);
 
 export default StaticImage;

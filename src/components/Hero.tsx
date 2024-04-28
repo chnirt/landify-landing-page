@@ -14,18 +14,20 @@ const HeroContent = () => {
   return (
     <div className="flex flex-col gap-5">
       <div className="flex flex-col gap-4">
-        <Typography variant="h1" className="text-neutral-900">
-          <TypeAnimation
-            sequence={[
-              // Same substring at the start will only be typed out once, initially
-              "The easiest way to manage projects",
-              1000, // wait 1s before replacing "Mice" with "Hamsters"
-            ]}
-            wrapper="span"
-            speed={50}
-            repeat={Infinity}
-          />
-        </Typography>
+        <div className="lg:min-h-48 md:min-h-28 sm:min-h-20 min-h-20">
+          <Typography variant="h1" className="text-neutral-900">
+            <TypeAnimation
+              sequence={[
+                // Same substring at the start will only be typed out once, initially
+                "The easiest way to manage projects",
+                1000, // wait 1s before replacing "Mice" with "Hamsters"
+              ]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+            />
+          </Typography>
+        </div>
         <span className="text-lg font-normal text-neutral-600">
           From the small stuff to the big picture, organizes the work so teams
           know what to do, why it matters, and how to get it done.
@@ -73,7 +75,7 @@ const HeroContent = () => {
 
 const Hero = () => {
   return (
-    <section className="flex min-h-dvh justify-center bg-[url('../photos/background.png')] bg-cover bg-center bg-no-repeat">
+    <section className="flex min-h-dvh justify-center bg-[url('../photos/background.webp')] bg-cover bg-center bg-no-repeat">
       <div className="responsive-container container flex flex-col items-center justify-center gap-10 py-20 lg:flex-row lg:gap-8 lg:py-0 lg:pt-0">
         <div className="flex-1">
           <HeroContent />
