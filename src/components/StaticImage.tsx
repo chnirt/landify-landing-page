@@ -4,7 +4,7 @@ import Image from "next/image";
 import logo from "../photos/logo.svg";
 import googlePlay from "../photos/google-play.svg";
 import appStore from "../photos/app-store.svg";
-import mobile from "../photos/mobile.svg";
+import mobile from "../photos/mobile.png";
 import airbnb from "../photos/airbnb.svg";
 import hubSpot from "../photos/hub-spot.svg";
 import google from "../photos/google.svg";
@@ -31,8 +31,8 @@ import tool5 from "../photos/tool5.svg";
 import tool6 from "../photos/tool6.svg";
 import tool7 from "../photos/tool7.svg";
 
-import mobile2 from "../photos/mobile2.svg";
-import mobile3 from "../photos/mobile3.svg";
+import mobile2 from "../photos/mobile2.png";
+import mobile3 from "../photos/mobile3.png";
 
 import logo2 from "../photos/logo2.svg";
 
@@ -62,13 +62,7 @@ StaticImage.appStore = (
   />
 );
 StaticImage.mobile = (
-  <Image
-    src={mobile}
-    alt="mobile"
-    width={320}
-    height={640}
-    loading="lazy"
-  />
+  <Image src={mobile} alt="mobile" width={320} height={581} loading="lazy" />
 );
 StaticImage.airbnb = (
   <Image src={airbnb} alt="airbnb" width={90} height={28} loading="lazy" />
@@ -202,10 +196,10 @@ StaticImage.tool7 = (
 );
 
 StaticImage.mobile2 = (
-  <Image src={mobile2} alt="mobile2" width={232} height={464} loading="lazy" />
+  <Image src={mobile2} alt="mobile2" width={232} height={339} loading="lazy" />
 );
 StaticImage.mobile3 = (
-  <Image src={mobile3} alt="mobile3" width={232} height={464} loading="lazy" />
+  <Image src={mobile3} alt="mobile3" width={232} height={302} loading="lazy" />
 );
 
 StaticImage.logo2 = (
