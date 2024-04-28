@@ -62,7 +62,13 @@ StaticImage.appStore = (
   />
 );
 StaticImage.mobile = (
-  <Image src={mobile} alt="mobile" width={320} height={640} loading="lazy" />
+  <Image
+    src={mobile}
+    alt="mobile"
+    width={320}
+    height={640}
+    loading="lazy"
+  />
 );
 StaticImage.airbnb = (
   <Image src={airbnb} alt="airbnb" width={90} height={28} loading="lazy" />
@@ -161,7 +167,13 @@ StaticImage.quoteMark = (
   />
 );
 StaticImage.smallQuoteMark = (
-  <Image src={smallQuoteMark} alt="small-quote-mark" width={16} height={13} />
+  <Image
+    src={smallQuoteMark}
+    alt="small-quote-mark"
+    width={16}
+    height={13}
+    loading="lazy"
+  />
 );
 StaticImage.strapi = (
   <Image src={strapi} alt="strapi" width={112} height={32} loading="lazy" />

@@ -14,7 +14,7 @@ const HeroContent = () => {
   return (
     <div className="flex flex-col gap-5">
       <div className="flex flex-col gap-4">
-        <div className="lg:min-h-48 md:min-h-28 sm:min-h-20 min-h-20">
+        <div className="min-h-20 sm:min-h-20 md:min-h-28 lg:min-h-32">
           <Typography variant="h1" className="text-neutral-900">
             <TypeAnimation
               sequence={[
@@ -28,10 +28,12 @@ const HeroContent = () => {
             />
           </Typography>
         </div>
-        <span className="text-lg font-normal text-neutral-600">
-          From the small stuff to the big picture, organizes the work so teams
-          know what to do, why it matters, and how to get it done.
-        </span>
+        <div className="min-h-20 sm:min-h-20 md:min-h-20 lg:min-h-24">
+          <span className="text-lg font-normal text-neutral-600">
+            From the small stuff to the big picture, organizes the work so teams
+            know what to do, why it matters, and how to get it done.
+          </span>
+        </div>
       </div>
 
       <div className="flex gap-4">
@@ -83,7 +85,7 @@ const Hero = () => {
 
         <div className="flex flex-1 justify-center">
           <InView animateClassName="animate-fade-left">
-            <div className="max-w-80">{StaticImage.mobile}</div>
+            <div>{StaticImage.mobile}</div>
           </InView>
         </div>
       </div>
